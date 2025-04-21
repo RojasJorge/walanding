@@ -1,0 +1,48 @@
+---
+import AccordionItem from "./AccordionItem.astro";
+
+const content = [
+{
+  index: 1,
+  title: "Strong Team",
+  description: "Strong team with a passion for AI and automation, joined forces to create Wa2Desk. Their deep expertise in technology and WhatsApp business solutions drives the company’s mission to revolutionize customer interactions for businesses worldwide."
+},
+{
+  index: 2,
+  title: "Right Time  & Market",
+  description: "WhatsApp dominates business messaging with 2.78B+ users, but 85% of companies struggle with automation. The AI-driven customer experience market is growing to $32B by 2028, creating a massive opportunity for intelligent automation."
+},
+{
+  index: 3,
+  title: "WhatsApp Copilots",
+  description: "AI-powered agents that automate conversations, process, transactions, and integrate with CRMs, online stores, and support systems. Helping businesses scale and generate additional revenue."
+},
+{
+  index: 4,
+  title: "Strong Customers",
+  description: "Leading enterprises and global brands trust in us and are optimizing communication by 75%, increasing sales and enhancing customer satisfaction through Wa2Desk automation."
+},
+// {
+//   index: 5,
+//   title: "Reporting",
+//   description: "Throughout the process, we will provide regular reports on the performance of your marketing campaigns. This will allow you to track progress, measure success, and make informed decisions about future strategies."
+// },
+// {
+//   index: 6,
+//   title: "Improvement",
+//   description: "Based on the data and insights gathered from the reports, we will make recommendations for further improvement. This may involve refining existing strategies, exploring new opportunities, or adjusting tactics to better align with your business goals."
+// }
+];
+---
+
+{
+  content.map((item) => {
+    return (
+      <AccordionItem
+        index={item.index}
+        title={item.title}
+        description={item.description}
+      />
+    );
+  })
+}

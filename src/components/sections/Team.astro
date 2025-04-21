@@ -1,0 +1,76 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import TeamCard from "../ui/TeamCard.astro";
+import Section from "./Section.astro";
+
+const description =
+  "Meet the skilled and experienced team behind our successful digital marketing strategies";
+
+// Team images
+import p1 from "../../assets/team/t1.png";
+import p2 from "../../assets/team/t2.png";
+import p3 from "../../assets/team/t3.png";
+import p4 from "../../assets/team/t4.png";
+import p5 from "../../assets/team/t5.png";
+import p6 from "../../assets/team/t6.png";
+
+// 12+ years in software engineering.
+// Expert in WhatsApp and business
+// automation, helping companies
+// streamline operations through
+// conversational solutions.
+// Passionate about AI’s role in
+// transforming productivity, making it
+// easier to build and scale intelligent
+// workflows.
+
+const team = [
+  {
+    pic: p1,
+    name: "Kike Ríos",
+    role: "Co-founder & CEO",
+    description: [
+      "12+ years in software engineering.",
+      "Expert in WhatsApp and business automation, helping companies streamline operations through conversational solutions.",
+      "Passionate about AI’s role in transforming productivity, making it easier to build and scale intelligent workflows.",
+    ],
+    link: "https://wa2desk.com/",
+  },
+  {
+    pic: p2,
+    name: "Hugo Mancilla",
+    role: "Co-founder & COO",
+    description: [
+      "0+ years in product development, management, and growth.",
+      "Focused on AI-powered solutions that enhance business efficiency and user engagement.",
+      "Passionate about turning innovation into real-world impact.",
+    ],
+    link: "https://wa2desk.com/",
+  },
+];
+---
+
+<Section id="about">
+  <div class="mt-[140px]">
+    <SectionTitle sectionTitle="Team" description={description} />
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-2 gap-10"
+    >
+      {
+        team.map((member, index) => (
+          <TeamCard
+            key={index}
+            pic={member.pic}
+            name={member.name}
+            role={member.role}
+            description={member.description}
+            link={member.link}
+          />
+        ))
+      }
+    </div>
+    <div class="flex justify-end mt-10">
+      <button class="btn-primary">See all team</button>
+    </div>
+  </div>
+</Section>
